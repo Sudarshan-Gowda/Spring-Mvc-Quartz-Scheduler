@@ -1,0 +1,27 @@
+<div>
+	<!-- <link th:href="@{/resources/css/lib/jquery-ui.css}" rel="stylesheet" /> -->
+	<link th:href="@{/resources/css/lib/bootstrap.css}" rel="stylesheet" />
+	<link rel="stylesheet"
+		th:href="@{/resources/css/lib/font-awesome.min.css}" />
+	<link th:href="@{/resources/css/login/star-login-style.css}"
+		rel="stylesheet" />
+
+	<link th:href="@{/resources/css/account/account-common.css}"
+		rel="stylesheet" />
+</div>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-3">
+			<a th:href="@{/}" alt="Login" class="logo"><img height="80"
+				width="180" th:src="@{/resources/images/sudarshan-logo.png}" /></a>
+		</div>
+
+		<div id="star-log-out">
+			<a th:href="@{/j_spring_security_logout}"><span id="str-lgt">Logout</span></a>
+		</div>
+	</div>
+</div>
+<div>
+	<script th:src="@{/resources/js/lib/jquery-1-11-3.js}"></script>
+	<script th:src="@{/resources/js/lib/bootstrap.js}"></script>
+</div>

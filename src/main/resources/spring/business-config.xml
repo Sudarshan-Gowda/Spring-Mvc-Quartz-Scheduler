@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Repository and Service layers -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<import resource="datasource-config.xml" />
+
+
+
+	<bean id="starEntityConfiguration" class="com.star.sud.EntityConfiguration" />
+
+	<import resource="application-context-entity.xml" />
+
+	<bean id="starMergedEntityContexts"
+		class="org.springframework.beans.factory.config.ListFactoryBean">
+		<property name="sourceList">
+			<list>
+				<value>classpath:spring/application-context-entity.xml</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+	<context:annotation-config />
+	<context:property-placeholder location="classpath:spring/data-acce.properties" />
+
+	<tx:annotation-driven />
+	<bean id="starInitializer" class="com.star.sud.framework.StarInitializer" />
+
+
+	<bean id="starSystemProperties" class="com.star.sud.StarSystemProperties">
+
+		<property name="sessionTimeOut" value="50000"></property>
+		<property name="commonPath"
+			value="E:/sudarshan-projects/2017/spring-thymeleaf/quartz-scheduler-based-mail-sending/"></property>
+		<property name="logfileLoc" value="logs/"></property>
+
+	</bean>
+
+
+	<beans profile="spring-data-jpa">
+		<bean id="entityManagerFactory"
+			class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean"
+			p:dataSource-ref="dataSource">
+			<property name="jpaVendorAdapter">
+				<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter"
+					p:database="${jpa.database}" p:showSql="${jpa.showSql}" />
+			</property>
+
+			<property name="persistenceUnitName" value="star" />
+			<property name="packagesToScan" value="com.star.sud" />
+		</bean>
+
+
+		<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"
+			p:entityManagerFactory-ref="entityManagerFactory" />
+
+		<bean
+			class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+
+		<jpa:repositories base-package="com.star.sud"
+			entity-manager-factory-ref="entityManagerFactory"
+			transaction-manager-ref="transactionManager" />
+
+		<context:component-scan base-package="com.star.sud" />
+
+	</beans>
+</beans>

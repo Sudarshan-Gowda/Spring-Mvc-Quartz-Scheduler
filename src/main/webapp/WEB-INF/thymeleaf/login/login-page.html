@@ -1,0 +1,104 @@
+<html>
+<head>
+<title>Spring Security</title>
+</head>
+<body>
+
+	<div id="fullpage">
+		<div class="header">
+			<div th:substituteBy="login/login-header" th:remove="tag"></div>
+		</div>
+		<!--header-->
+		<div class="container">
+			<div class="col-md-4 col-sm-6 col-xs-9 loginform">
+				<div class="panel">
+					<div class="panel-heading">
+						<div class="panel-title">Sign In</div>
+					</div>
+
+					<div style="padding-top: 20px" class="panel-body">
+						<!-- <div th:if="${starMessage != null}" class="alert alert-danger">
+							<span th:text="${starMessage}"></span>
+						</div> -->
+
+						<div th:substituteBy="messages/server-message" th:remove="tag"></div>
+
+						<form method="post"
+							th:action="${reqParamsStr} ? @{${'/' + T(com.star.sud.SectionKeys).LOG_IN + '?' + reqParamsStr}} : @{${'/' + T(com.star.sud.SectionKeys).LOG_IN}}"
+							class="form-horizontal">
+
+							<div style="margin-bottom: 25px" class="input-group">
+								<span class="input-group-addon"><i class="fa fa-user"></i></span>
+								<input type="text" class="form-control" id="j_username"
+									name="j_username" placeholder="User Name"></input>
+							</div>
+
+							<div class="input-group">
+								<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+								<input type="password" class="form-control" id="j_password"
+									name="j_password" placeholder="Password"></input>
+							</div>
+
+							<div style="margin-top: 20px" class="form-group">
+								<div class="col-sm-12 controls">
+									<button type="submit" class="btn btn-success star-link">Login</button>
+									<button type="reset" class="btn btn-danger">Reset</button>
+									<!-- <a class="pull-right"
+										th:href="@{${'/' + T(com.star.sud.SectionKeys).REGISTARTION}}"
+										data-toggle="modal" data-target="#pleaseWaitDialog">New
+										User </a> -->
+
+									<a class="pull-right"
+										th:href="@{${'/' + T(com.star.sud.SectionKeys).REGISTARTION}}">New
+										User </a>
+
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container-fluid">
+			<div id="dbCarousel" class="carousel slide" data-ride="carousel"
+				data-interval="4000">
+
+				<ol class="carousel-indicators">
+					<li data-target="#dbCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#dbCarousel" data-slide-to="1"></li>
+					<li data-target="#dbCarousel" data-slide-to="2"></li>
+					<li data-target="#dbCarousel" data-slide-to="3"></li>
+				</ol>
+
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<img th:src="@{/resources/images/slider/image1.jpg}"
+							style="width: 2000px; height: 550px;" />
+					</div>
+
+
+					<div class="item">
+						<img th:src="@{/resources/images/slider/image2.jpg}"
+							style="width: 2000px; height: 550px;" />
+					</div>
+
+					<div class="item">
+						<img th:src="@{/resources/images/slider/image3.jpg}"
+							style="width: 2000px; height: 550px;" />
+					</div>
+
+					<div class="item">
+						<img th:src="@{/resources/images/slider/image4.jpg}"
+							style="width: 2000px; height: 550px;" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col-lg-12 col-sm-12 col-xs-12 copyrights">
+		<div th:substituteBy="login/login-footer" th:remove="tag"></div>
+	</div>
+
+</body>
+</html>

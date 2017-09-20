@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Spring Security</title>
+</head>
+<body>
+	<div id="fullpage">
+		<div class="header">
+			<div th:substituteBy="login/welcome-header" th:remove="tag"></div>
+		</div>
+
+
+		<div id="star-wrapper">
+			<div>
+				<span>Dear </span> <span id="star-userId" th:text="${userName}"></span>:
+				your Successfully Logged In......	
+			</div>
+		</div>
+	</div>
+
+
+	<div id="star-body-form">
+		<div class="col-lg-12 col-sm-12 col-xs-12 copyrights">
+			<div th:substituteBy="login/login-footer" th:remove="tag"></div>
+		</div>
+	</div>
+
+</body>
+</html>

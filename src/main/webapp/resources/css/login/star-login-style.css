@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	background-color: #D7E1E8;
+	background: url(../../images/pattern.png);
+	font-size: 12px;
+	margin-right: 0px !important;
+}
+
+#fullpage {
+	width: 100%;
+	height: auto;
+}
+
+.header {
+	width: 100%;
+	height: auto;
+	/* background-color: #ddd; */
+	background-color: rgba(51, 51, 51, 0.6);
+}
+
+a.logo {
+	color: #FFF;
+	text-decoration: none;
+	padding: 10px;
+}
+
+a.logo>b {
+	font-size: 30px;
+}
+
+.loginform {
+	height: auto;
+	position: fixed;
+	right: 350px;
+	z-index: 999;
+	padding: 40px;
+}
+
+.panel>.panel-heading>.panel-title {
+	padding: 10px;
+}
+
+.copyrights {
+	margin-top: 45px;
+	width: 100%;
+	height: auto;
+	background-color: #ccc;
+	padding: 10px;
+}
+
+.modal-header {
+	background-color: #0081c1;
+	color: #fff;
+}
+
+#star-wrapper {
+	margin-top: 100px;
+	margin-left: 300px;
+	font-size: 18px;
+}
+
+#star-body-form {
+	margin-top: 500px;
+}
+
+#star-userId {
+	font-size: 20px;
+	color: red;
+}
+
+#star-log-out {
+	margin-left: 1250px;
+	margin-top: 50px;
+	font-size: 15px;
+}
+
+.star-reg-header {
+	margin-bottom: 15px;
+	font-weight: bold;
+	color: blue;
+}
+
+.star-reg-body {
+	font-size: 15px;
+}
+
+#str-lgt {
+	color: rgba(255, 0, 0, 0.63);
+}
+
+/* code for user profile */
+.carousel-control {
+	position: absolute;
+	top: 200px;
+	bottom: 0;
+	left: 0;
+	width: 5%;
+	font-size: 20px;
+	color: #0099ff;
+	text-align: center;
+	filter: alpha(opacity = 50);
+	opacity: .5;
+}

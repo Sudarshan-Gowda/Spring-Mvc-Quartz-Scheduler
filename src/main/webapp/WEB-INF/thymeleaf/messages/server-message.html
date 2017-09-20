@@ -1,0 +1,10 @@
+<!-- btn/alert and change info to primary -->
+<div th:if="${starMessage!=null}">
+	<div class="alert"
+		th:classappend="${'alert-' + scrnMsg.type.friendlyType}"
+		th:each="scrnMsg : ${starMessage}">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close"
+			style="opacity: 1; margin-top: -19px; margin-right: -14px;">&times;</a>
+		<span th:text="${scrnMsg.message}"></span>
+	</div>
+</div>

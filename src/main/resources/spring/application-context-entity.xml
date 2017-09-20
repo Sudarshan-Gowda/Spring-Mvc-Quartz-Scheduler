@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Repository and Service layers -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- sudarshan created on january 2017 -->
+
+	<bean id="com.star.sud.security.model.StarUser" class="com.star.sud.security.model.StarUserImpl"
+		scope="prototype"></bean>
+
+	<bean id="com.star.sud.security.model.StarUserDetails" class="com.star.sud.security.model.StarUserDetailsImpl"
+		scope="prototype"></bean>
+
+	<bean id="com.star.sud.framework.model.ApplicationScheduler"
+		class="com.star.sud.framework.model.ApplicationSchedulerImpl" scope="prototype"></bean>
+
+	<bean id="com.star.sud.framework.model.ApplicationSettings" class="com.star.sud.framework.model.ApplicationSettingsImpl"
+		scope="prototype" />
+
+	<bean id="com.star.sud.framework.model.SchedulerJobs" class="com.star.sud.framework.model.SchedulerJobsImpl"
+		scope="prototype" />
+
+	<bean id="com.star.sud.framework.model.notification.StarMailDetail"
+		class="com.star.sud.framework.model.notification.StarMailDetailImpl"
+		scope="prototype" />
+
+</beans>
