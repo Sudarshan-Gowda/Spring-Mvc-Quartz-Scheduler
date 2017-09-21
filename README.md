@@ -17,7 +17,8 @@ This Repository includes following functionality:
 `step 5`: Run the Application, if it successfully deployed means , you will redirected to login page with registration link.            
 `step 6`: click on registration link & register the data & mail will go to registered mail account.                                     
 
-# Technology Used:                                                                                            
+# Technology Used:    
+  Java 8                                                                                                                                
   Spring MVC                                                                                                                             
   JPA & Hibernate                                                                                                                       
   Spring- security                                                                                                                         Log4j                                                                                                                                 
