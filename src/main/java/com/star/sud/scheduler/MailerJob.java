@@ -70,7 +70,7 @@ public class MailerJob implements Job {
 			emailInfo.setSubject("Registration Successfull!!");
 			emailInfo.setMessageBody(
 					"Dear " + user.getStarUserDetails().getFirstName() + " " + user.getStarUserDetails().getLastName()
-							+ ", <br>  &nbsp;&nbsp;&nbsp;&nbsp; Congradulations! &nbsp;&nbsp Your Account is successfully created. <br> You can access your application with the credentail which you given while Registartion. "
+							+ ", <br>  &nbsp;&nbsp;&nbsp;&nbsp; congratulations! &nbsp;&nbsp; Your Account is successfully created. <br> You can access your application with the credentail which you given while Registartion. "
 							+ "<br><br><br><br><br><br><br>" + "Regards,<br>" + "Admin Be the Best");
 			emailInfo.setEmailTo(user.getStarUserDetails().getEmail());
 
