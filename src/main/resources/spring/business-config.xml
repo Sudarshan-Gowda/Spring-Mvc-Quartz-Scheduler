@@ -39,7 +39,7 @@
 
 		<property name="sessionTimeOut" value="50000"></property>
 		<property name="commonPath"
-			value="E:/sudarshan-projects/2017/spring-thymeleaf/quartz-scheduler-based-mail-sending/"></property>
+			value="E:/sudarshan-projects/2017/spring-thymeleaf/Spring-Mvc-Quartz-Scheduler/"></property>
 		<property name="logfileLoc" value="logs/"></property>
 
 	</bean>
