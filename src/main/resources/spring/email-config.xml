@@ -29,7 +29,7 @@
 			<!-- change accordingly -->
 		</property>
 		<property name="password">
-			<value>****</value>
+			<value>*******</value>
 			<!-- change accordingly -->
 		</property>
 		<property name="javaMailProperties">

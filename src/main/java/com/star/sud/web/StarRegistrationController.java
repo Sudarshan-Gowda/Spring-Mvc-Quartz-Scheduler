@@ -34,36 +34,56 @@ public class StarRegistrationController extends StarAbstractController {
 	@RequestMapping(value = StarUrl.NEW_REGISTRATION, method = RequestMethod.POST)
 	public String newUserRegistrn(Model model, @ModelAttribute("registration") UserBasicInform registration,
 			RedirectAttributes redirectAttributes) {
+
 		StarUser user = null;
-
-		user = userAcccountService.storeUserInformation(user, registration, Boolean.TRUE);
-
-		model.addAttribute("registration", registration);
-
 		StarMessage starMessage = null;
 
-		if (user != null) {
+		try {
 
-			StarMailDetail mailDetail = starUtilService.createEntityObj(StarMailDetail.class.getName(),
-					StarMailDetail.class);
-			mailDetail.setStarUser(user);
-			mailDetail.setStatus("NEW");
-			mailDetail.setDateScheduled(new Date());
-			starUtilService.save(mailDetail);
+			if (null == registration)
+				throw new Exception("Registration param null or empty");
 
-			starMessage = new StarMessage().code(StarMessageCode.INFORMATION)
-					.message("Your Account is successfully created !!")
-					.type(StarMessageType.SUCCESS);
+			if (null == registration.getUserGeneralDetail())
+				throw new Exception("General Details param null or empty");
 
-		} else {
-			starMessage = new StarMessage().code(StarMessageCode.INFORMATION).message("Error In Account creation")
+			user = starSecurityService.findSysUserName(registration.getUserGeneralDetail().getUserName());
+			if (user != null)
+				throw new Exception("User Already Exist. Please try with different User Name");
+
+			user = userAcccountService.storeUserInformation(user, registration, Boolean.TRUE);
+
+			model.addAttribute("registration", registration);
+
+			if (user != null) {
+
+				StarMailDetail mailDetail = starUtilService.createEntityObj(StarMailDetail.class.getName(),
+						StarMailDetail.class);
+				mailDetail.setStarUser(user);
+				mailDetail.setStatus("NEW");
+				mailDetail.setDateScheduled(new Date());
+				starUtilService.save(mailDetail);
+
+				starMessage = new StarMessage().code(StarMessageCode.INFORMATION)
+						.message("Your Account is successfully created !!").type(StarMessageType.SUCCESS);
+
+			} else {
+				starMessage = new StarMessage().code(StarMessageCode.INFORMATION).message("Error In Account creation")
+						.type(StarMessageType.ERROR);
+
+			}
+
+			redirectAttributes.addFlashAttribute(STAR_MESSAGE, starMessage);
+
+			return StarConstants.REDIRECT_URL;
+
+		} catch (Exception e) {
+			starMessage = new StarMessage().code(StarMessageCode.INFORMATION).message(e.getMessage())
 					.type(StarMessageType.ERROR);
-
 		}
+		model.addAttribute("registration", registration);
 
-		redirectAttributes.addFlashAttribute(STAR_MESSAGE, starMessage);
+		return "registarion/registarion";
 
-		return StarConstants.REDIRECT_URL;
 	}
 
 }

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  <display-name>quartz-scheduler-based-mail-sending</display-name>
+  <display-name>Spring-Mvc-Quartz-Scheduler-based-mail-sending</display-name>
   <context-param>
     <param-name>spring.profiles.active</param-name>
     <param-value>spring-data-jpa</param-value>
@@ -13,7 +13,7 @@
     <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
   </listener>
   <servlet>
-    <servlet-name>quartz-scheduler</servlet-name>
+    <servlet-name>Spring-Mvc-Quartz-Scheduler</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
@@ -22,7 +22,7 @@
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>quartz-scheduler</servlet-name>
+    <servlet-name>Spring-Mvc-Quartz-Scheduler</servlet-name>
     <url-pattern>/</url-pattern>
   </servlet-mapping>
   <servlet-mapping>

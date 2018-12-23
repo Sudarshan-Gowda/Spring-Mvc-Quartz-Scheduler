@@ -22,9 +22,9 @@
 
 	<context:property-placeholder location="classpath:spring/data-acce.properties" />
 
-	
-	<jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/scheduler-project" />
-	
-	
+
+	<jee:jndi-lookup id="dataSource" jndi-name="java:jboss/datasources/rd-project" />
+
+
 
 </beans>

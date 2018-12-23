@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Spring Security</title>
+<title>Spring Mvc Quartz Scheduler</title>
+<link rel="icon" th:href="@{/resources/images/sudarshan-logo.png}" />
+
 </head>
 <body>
 	<div id="fullpage">
@@ -19,6 +21,10 @@
 
 						<div class="form-group col-md-12">
 							<div class="star-reg-header">New User Registration</div>
+						</div>
+
+						<div th:if="${starMessage != null}" class="alert alert-danger">
+							<span th:text="${starMessage}"></span>
 						</div>
 
 						<div class="star-reg-body">
@@ -56,13 +62,13 @@
 							</div>
 
 							<div class="form-group col-sm-4">
-								<label class="required">Password: </label> <input type="text"
-									class="form-control" th:field="*{userGeneralDetail.password}"
-									required="required" />
+								<label class="required">Password: </label> <input
+									type="password" class="form-control"
+									th:field="*{userGeneralDetail.password}" required="required" />
 							</div>
 
 							<div class="form-group col-sm-4">
-								<label class="required">Email: </label> <input type="text"
+								<label class="required">Email: </label> <input type="email"
 									class="form-control" th:field="*{userGeneralDetail.email}"
 									required="required" />
 							</div>

@@ -1,4 +1,5 @@
 package com.star.sud.scheduler;
+
 /*created by Sudarshan on 19-09-17*/
 import java.util.Date;
 import java.util.HashMap;
@@ -16,6 +17,8 @@ import com.star.sud.framework.model.notification.StarMailDetail;
 import com.star.sud.framework.service.StarUtilService;
 import com.star.sud.framework.service.email.EmailInfo;
 import com.star.sud.framework.service.email.EmailService;
+import com.star.sud.framework.service.email.EmailStatus;
+import com.star.sud.framework.service.email.EmailStatus.STATUS;
 import com.star.sud.paging.StarFilter;
 import com.star.sud.paging.StarOperator;
 import com.star.sud.paging.StarPageResultList;
@@ -64,23 +67,20 @@ public class MailerJob implements Job {
 
 			EmailInfo emailInfo = new EmailInfo();
 			emailInfo.setFromAddress(defEmailInfo.getFromAddress());
-			emailInfo.setSubject("Registration!!");
+			emailInfo.setSubject("Registration Successfull!!");
 			emailInfo.setMessageBody(
 					"Dear " + user.getStarUserDetails().getFirstName() + " " + user.getStarUserDetails().getLastName()
-							+ ", <br>  &nbsp;&nbsp;&nbsp;&nbsp; Your Account is successfully created");
+							+ ", <br>  &nbsp;&nbsp;&nbsp;&nbsp; Congradulations! &nbsp;&nbsp Your Account is successfully created. <br> You can access your application with the credentail which you given while Registartion. "
+							+ "<br><br><br><br><br><br><br>" + "Regards,<br>" + "Admin Be the Best");
 			emailInfo.setEmailTo(user.getStarUserDetails().getEmail());
 
-			try {
+			EmailStatus emailStatus = emailService.sendMail(emailInfo);
 
-				emailService.sendMail(emailInfo);
-			} catch (Exception e) {
-
-				e.printStackTrace();
+			if (emailStatus != null && emailStatus.getStatus().equals(STATUS.SUCCESS)) {
+				starMailDetail.setStatus("SENT");
+				starMailDetail.setDateSent(new Date());
+				starUtilService.save(starMailDetail);
 			}
-
-			starMailDetail.setStatus("SENT");
-			starMailDetail.setDateSent(new Date());
-			starUtilService.save(starMailDetail);
 
 		}
 	}
