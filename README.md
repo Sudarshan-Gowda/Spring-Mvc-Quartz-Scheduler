@@ -31,9 +31,4 @@ This Repository includes following functionality:
  Sevrver - Wildfly 10                                                                                                                   
 
 
-If you people get any issues regarding this repository means, feel free to comment, I will help you guys to run this repository sucessfully.                                                                                                                      
-
-Thank u guys..                                                                                                                      
-Have a great day.                                                                                                                       
-
-
+If any issues regarding this repository means, feel free to comment, I will help you guys to run this repository sucessfully.                                                                                                                     
