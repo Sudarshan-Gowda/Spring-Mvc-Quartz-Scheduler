@@ -33,4 +33,6 @@ This Repository includes following functionality:
  Sevrver - Wildfly 10                                                                                                                   
 
 
-If any issues regarding this repository means, feel free to comment, I will help you guys to run this repository sucessfully.                                                                                                                     
+# Contributing
+
+The [issue tracker](https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/issues) is the preferred channel for bug reports, features requests and submitting pull requests.
