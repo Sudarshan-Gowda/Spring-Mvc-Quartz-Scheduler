@@ -13,7 +13,7 @@ This Repository includes following functionality:
 `step 1`: Dowmload this repository & do maven import.                                                                                   
 `step 2`: Fire the Query as listed in db_scripts.sql file to any Data base.                                                             
 `step 3`: Add jndi-name in server as defined in data-source.config.xml  
-`step 4`: Configure the JNDI in Wildfly for ref (https://wiki.snowflakesoftware.com/display/GPWDOC/JNDI+Data+Source+Configuration+on+WildFly+10)
+`step 4`: Configure the JNDI in Wildfly For Ref [click](https://wiki.snowflakesoftware.com/display/GPWDOC/JNDI+Data+Source+Configuration+on+WildFly+10)
 `step 5`: Configure your Gmail UN & PW in `email-config.xml` for sending email.                                                         
 `step 6`: Run the Application, if it successfully deployed means , you will redirected to login page with registration link.            
 `step 7`: click on registration link & register the data & mail will go to registered mail account.                                     
