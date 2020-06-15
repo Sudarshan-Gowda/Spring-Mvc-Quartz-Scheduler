@@ -43,7 +43,7 @@
 		<hibernate-validator.version>4.3.0.Final</hibernate-validator.version>
 
 		<!-- Apche, commons -->
-		<commons-collections.version>3.2.1</commons-collections.version>
+		<commons-collections.version>3.2.2</commons-collections.version>
 		<apache-commons.version>3.3.2</apache-commons.version>
 
 		<!-- Database access -->
