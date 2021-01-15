@@ -20,9 +20,7 @@ This Repository includes following functionality:
 
   `b.` You can copy and paste our datasource examples, then edit them to your configuration as required. The datasources must be defined between the <datasources> tags of the standalone.xml file.
 
-``
-....
-<datasource jndi-name="java:/GPWorkflowDS" pool-name="GPWorkflowDS-Pool" enabled="true" use-java-context="true">
+``<datasource jndi-name="java:/GPWorkflowDS" pool-name="GPWorkflowDS-Pool" enabled="true" use-java-context="true">
     <connection-url>jdbc:oracle:thin:@localhost:1521:ORCL1</connection-url>
     <driver>ojdbc7</driver>
     <pool>
@@ -35,7 +33,6 @@ This Repository includes following functionality:
         <password>GPWORKFLOW</password>
     </security>
 </datasource>
-....
 ``
 
 `step 5`: Configure your Gmail credentials in `email-config.xml` for sending email.                                                         
@@ -55,6 +52,27 @@ This Repository includes following functionality:
  # Tools Used
   Eclipse- Mars
   Server - Wildfly 10                                                                                                                   
+
+ ## User Guide
+ 
+ <img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture1.PNG"/>
+ 
+ <img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture2.PNG"/>
+
+<img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture2.PNG"/>
+
+<img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture4.PNG"/>
+
+<img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture5.PNG"/>
+
+<img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture6.PNG"/>
+
+<img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture7.PNG"/>
+
+<img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture8.PNG"/>
+
+<img src="https://github.com/Sudarshan-Gowda/Spring-Mvc-Quartz-Scheduler/blob/master/docs/Picture9.PNG"/>
+
 
 
 # Contributing
