@@ -17,7 +17,7 @@
 		<!-- Spring -->
 		<spring-framework.version>4.0.4.RELEASE</spring-framework.version>
 		<spring-data-jpa.version>1.3.0.RELEASE</spring-data-jpa.version>
-		<spring-security-core-version>3.2.3.RELEASE</spring-security-core-version>
+		<spring-security-core-version>5.5.7</spring-security-core-version>
 		<spring-security-web-version>3.2.3.RELEASE</spring-security-web-version>
 		<spring-security-config-version>3.2.3.RELEASE</spring-security-config-version>
 		<spring-ws.version>1.5.2</spring-ws.version>
